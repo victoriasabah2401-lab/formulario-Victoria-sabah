@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="formulario.css" rel="stylesheet" type="text/css">
+    <title>Formulario de adopción</title>
+</head>
+<body>
+    <div>
+        <h1>Formulario de adopción</h1>
+        <p>Complete los siguientes campos</p>
+
+        <form action="#" method="POST" id="registroForm">
+            <fieldset>
+                <legend>Datos Personales</legend>
+
+                <div>
+                    <label for="nombre">Nombre y Apellido</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Simona Rodriguez" required>
+                </div>
+
+                <div>
+                    <label for="DNI">DNI</label>
+                    <input type="number" id="DNI" name="DNI" placeholder="Ej: 35628673" required>
+                </div>
+
+                <div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: +54 11 1234-5678">
+                </div>
+
+                <div>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="Ej: Simona0312@gmail.com" required>
+                </div>
+            </fieldset>
+
+            <fieldset> 
+                <legend>Sobre la adopción</legend>
+                <div>
+                    <label for="mascota">Ingrese el nombre de la mascota</label>
+                    <input type="text" id="mascota" name="Nombre de la mascota" required>
+                </div>
+            <div>
+                <label for=¿Por qué queres adoptar?>¿Por qué queres adoptar?</label>
+                <br>
+                <textarea type=text id="¿Por qué queres adoptar?" name="¿Por qué queres adoptar?" rows="5" placeholder="Escriba aquí..." required></textarea>
+            </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Sobre tu hogar</legend>
+
+                <div>
+                    <label>¿Donde vivis?</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="¿Donde vivis?" value="Departamento" required>
+                            Departamento
+                        </label>
+                        <label>
+                            <input type="radio" name="¿Donde vivis?" value="Casa" required>
+                            Casa
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label>¿Tenes patio?</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="patio" value="Si" required>
+                            Si
+                        </label>
+                        <label>
+                            <input type="radio" name="patio" value="No" required>
+                            No
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label>¿Tenes otras mascotas?</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="¿Tenes otras mascotas?" value="Si" required>
+                            Si
+                        </label>
+                        <label>
+                            <input type="radio" name="¿Tenes otras mascotas?" value="No" required>
+                            No
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Experiencia</legend>
+                <div>
+                    <label>¿Tuviste mascotas anteriormente?</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="¿Tuviste mascotas anteriormente?" value="Si" required>
+                            Si
+                        </label>
+                        <label>
+                            <input type="radio" name="¿Tuviste mascotas anteriormente?" value="No" required>
+                            No
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label>¿Cuánto tiempo podría estar la mascota acompañada durante el día?</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="horas" value="día completo" required>
+                            Todo el día
+                        </label>
+                        <label>
+                            <input type="radio" name="horas" value="+6 horas" required>
+                            Más de 6 horas
+                        </label>
+                        <label>
+                            <input type="radio" name="horas" value="Entre 3 y 6 horas" required>
+                            Entre 3 y 6 horas
+                        </label>
+                        <label>
+                            <input type="radio" name="horas" value="3 horas" required>
+                            Menos de 3 horas
+                        </label>
+                </div>
+                  <div>
+                    <label for="compañeros">¿Quienes viven con vos?</label>
+                    <br>
+                    <textarea type="text" id="compañeros" name="compañeros" rows="5" placeholder="Vivo con mi esposo/a y dos hijos" required></textarea>
+                </div>
+            </fieldset>
+
+           <fieldset>
+            <legend>Confirmación y Envío</legend>
+            <div>
+                <label>
+                    <input type="checkbox" name="terminos" required>
+                    Me comprometo a cuidar responsablemente a la mascota, brindarle alimento, atención veterinaria, cariño y un hogar seguro.</a>
+                </label>
+            </div>
+            
+            <div>
+                <button type="submit">Enviar la Inscripción</button>
+                <button type="reset">Limpiar formulario</button>
+            </div>
+           </fieldset>
+        </form>
+    </div>
+</body>
+</html>

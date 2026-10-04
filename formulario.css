@@ -1,0 +1,278 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;  /* padding y borde se incluyen dentro del ancho/alto */
+    margin: 0;
+    padding: 0;
+}
+
+/*Fondo formulario*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;              
+    line-height: 1.6;           /*Altura de línea para legibilidad */
+    min-height: 100vh; /*Ocupa al menos toda la altura de la pantalla */
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #F5F0EB;
+    color: #000000; /*Color del texto*/
+}
+
+/*Contenedor principal (la tarjeta blanca)*/
+body > div {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15),
+                0 8px 10px -6px rgba(0, 0, 0, 0.1); /* sombra grande */
+    padding: 50px;
+    width: 100%;/* ocupa todo el ancho disponible */
+}
+
+/* Encabezado principal*/
+h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #2e5a44;
+}
+
+/*Párrafo justo después del h1*/
+h1 + p {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+/*Fieldset*/
+form {
+    display: flex;
+    flex-direction: column; /*Dirección en fomra vertical*/
+    gap: 30px; /*Espacios entre cada columna*/
+}
+
+fieldset {
+    border: 2px solid hsla(36, 57%, 52%, 0.836);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+/* Sombra al pasar el mouse fieldset */
+fieldset:hover {
+    border-color: #4e3403b4;
+}
+
+/* Título de cada fieldset */
+legend {
+    font-weight: 700;
+    font-size: 17px;
+    color: #2e5a44;
+    padding: 12px;       /* espacio horizontal */
+    display: flex;
+    align-items: center;
+}
+
+/*Etiquetas de los campos*/
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+    color: #1e293b;
+    margin-bottom: 5px; /*espacio por debajo*/
+}
+
+/* Campos de texto*/
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+
+textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit; /* usa la misma fuente del body */
+    color: #1e293b;
+    background: #f1f5f9;
+    outline: none;
+}
+
+/*Efecto al hacer clic en el campo*/
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #57bd8a;
+    box-shadow: #2e5a44;/*/Sombra*/
+    background: #ffffff;
+}
+
+/* Placeholder de inputs y textareas */
+input::placeholder,
+textarea::placeholder {
+    color: #00000059;
+    font-style: italic;
+}
+
+/*Radio btones y Checkboxes*/
+input[type="radio"],
+input[type="checkbox"] {
+    appearance: none;  /*Hacen que le puedas dar tu propio estilo y no el de la web*/
+    -webkit-appearance: none; /*Hacen que le puedas dar tu propio estilo y no el de la web*/
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cbd5e1;
+    margin-right: 2px;
+    vertical-align: middle;
+    position: relative;
+    flex-shrink: 0; /* no se encoge en flex */
+    cursor: pointer;
+}
+
+/* Radio: forma circular */
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+/* Checkbox: esquinas ligeramente redondeadas */
+input[type="checkbox"] {
+    border-radius: 4px;
+}
+
+/* Radio seleccionado*/
+input[type="radio"]:checked {
+    border-color: #2e5a44 ;
+    background: #22c55e7e ;
+}
+
+/* Checkbox seleccionado*/
+input[type="checkbox"]:checked {
+    border-color: #2e5a44;
+    background: #22c55e;
+}
+
+/* Efecto hover en radio y checkbox */
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+    border-color: #2e5a44;
+}
+
+/*Contenedor flexible para radio buttons y checkboxes en línea*/
+fieldset > div > div {
+    display: flex;
+    flex-wrap: wrap; /*si no entran pasan a la siguiente línea */
+    gap: 10px 10px; /* espacio entre filas y columnas */
+    margin-top: 5px;
+}
+
+/* Cada etiqueta dentro del contenedor de opciones */
+fieldset > div > div label {
+    display: inline-flex;         /* flexible en línea */
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding: 5px 10px; /*relleno de las casillas*/
+    border-radius: 20px;
+    background: #f1f5f9;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+/* Etiqueta que al seleccionar se resalta */
+fieldset > div > div label:has(input:checked) {
+    background: #f1cd5767;
+    border-color: #2e5a44;
+    color: #2e5a44;
+    font-weight: 600;
+}
+
+/* Sección de términos y condiciones */
+form > div:has(input[name="terminos"]) {
+    display: flex;
+    align-items: flex-start;
+    padding: 3px 0px;
+}
+
+form > div:has(input[name="terminos"]) label {
+    display: inline-flex;
+    align-items: flex-start;
+    font-size: 12px;
+}
+
+/* Botones*/
+form > div:last-child {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    flex-wrap: wrap; /* si no caben, se apilan */
+}
+
+/* Estilos base para ambos botones */
+button {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 10px 12px; /*relleno*/
+    border: none;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+/* Botón de envío*/
+button[type="submit"] {
+    background: #2e5a44;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    flex: 2;
+    max-width: 350px;
+}
+
+/* Hover del boton*/
+button[type="submit"]:hover {
+    background: #22c55e;
+    transform: translateY(-3px);
+}
+
+/* Botón de reset (Limpiar formulario) */
+button[type="reset"] {
+    background: transparent;
+    color: #00000091;
+    border: 2px solid #2e5a44;
+    flex: 2;
+    max-width: 350px;
+}
+
+/* Hover del botón reset */
+button[type="reset"]:hover {
+    background: #22c55e5e;
+    border-color: #22c55e;
+    color: #2e5a44;
+    transform: translateY(-3px);
+}
+
+/*Validación visual: borde verde si el campo es válido */
+input:valid:not(:placeholder-shown):not([type="radio"]):not([type="checkbox"]) {
+    border-color: #22c55e;
+}
+
+/* Validación visual: borde rojo si el campo es inválido */
+input:invalid:not(:placeholder-shown):not(:focus):not([type="radio"]):not([type="checkbox"]) {
+    border-color: #ef4444; }
+
+.footer body {
+    clear: both; /*Debajo del formulario */
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+}
